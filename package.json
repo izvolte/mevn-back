@@ -1,0 +1,23 @@
+{
+  "name": "back-mevn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "boom": "^7.3.0",
+    "cors": "^2.8.5",
+    "dollars-to-cents": "^1.0.3",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.0.1",
+    "form-data": "^3.0.0",
+    "mongoose": "^5.11.8",
+    "qs": "^6.9.4",
+    "stripe": "^8.129.0"
+  }
+}
