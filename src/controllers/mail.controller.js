@@ -42,7 +42,7 @@ const createAdminConfirmationOrderEmail = async ({_id, phone, fullname, address}
 `, // html body
     });
 
-
+    console.log(mail)
     return mail
 
 }
