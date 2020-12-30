@@ -11,12 +11,12 @@ const createPaymentIntent = async ({body: {fullname, address, phone, email, prod
         }
 
         const amount = sum(products.map(i => Number(i.amount)))
-
+        const productsIds = products.map(({_id}) => _id)
         const prepareOrder = {
-            fullname, address, phone, email, products, amount
+            fullname, address, phone, email, products: productsIds, amount
         }
 
-        const newOrder = await new Order(prepareOrder)
+        const newOrder = await new Order( prepareOrder )
         const saveOrder = newOrder.save()
 
         const paymentIntent = await stripe.paymentIntents.create({
