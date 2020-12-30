@@ -25,6 +25,7 @@ const createUserConfirmationOrderEmail = async ({_id, email}) => {
     });
 
 
+    console.log(mail)
     return mail
 
 }
