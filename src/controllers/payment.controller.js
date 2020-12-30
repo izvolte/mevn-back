@@ -47,7 +47,6 @@ const stripeWebHook = async ({body: {data}}, res) =>{
 
         await Order.findByIdAndUpdate(orderId, {status: 'Paid'})
 
-        console.log(body)
         return res.status(200).send('success')
     }catch (e) {
         res.status(500).send(e)
