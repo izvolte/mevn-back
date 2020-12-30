@@ -24,7 +24,7 @@ const createPaymentIntent = async ({body: {fullname, address, phone, email, prod
             currency: 'usd',
             payment_method_types: ['card'],
             metadata: {
-                oderId: String(saveOrder._id)
+                OrderId: String(saveOrder._id)
             }
         })
 
