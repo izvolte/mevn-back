@@ -9,7 +9,7 @@ const { routes } = require("./src/routes")
 
 // настроим подключение к бд
 mongoose.connect(
-    'mongodb://localhost:27017/mevnshop',
+    'mongodb://83.220.168.245:32768/mevnshop',
     {
         useCreateIndex: true,
         useNewUrlParser: true,
@@ -28,7 +28,7 @@ routes.forEach(item => {
 })
 
 // объявим наши роуты
-const PORT = 3000;
+const PORT = 3001;
 http.createServer({}, app).listen(PORT);
 
 console.log(`server running at ${PORT}`);
