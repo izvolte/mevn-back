@@ -23,6 +23,9 @@ const createPaymentIntent = async ({body: {fullname, address, phone, email, prod
             amount: dollarsToCents(amount),
             currency: 'usd',
             payment_method_types: ['card'],
+            metadata: {
+                oderId: String(saveOrder._id)
+            }
         })
 
         return res.status(200).send({
@@ -34,8 +37,16 @@ const createPaymentIntent = async ({body: {fullname, address, phone, email, prod
     }
 }
 
-const stripeWebHook = async ({body}, res) =>{
+const stripeWebHook = async ({body: {data}}, res) =>{
     try {
+        const {metadata: {orderId}} = data.object
+        const order = await Order.findById(orderId)
+        if(!order){
+            throw new Error('Order not found')
+        }
+
+        await Order.findByIdAndUpdate(orderId, {status: 'Paid'})
+
         console.log(body)
         return res.status(200).send('success')
     }catch (e) {

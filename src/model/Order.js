@@ -25,6 +25,10 @@ const schema = new Schema({
         type: String,
         default: ''
     },
+    status: {
+        type: String,
+        default: 'Pending'
+    },
     products: [
         {
             type: ObjectId,
