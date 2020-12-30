@@ -18,7 +18,7 @@ const genericCrud = (model) => ({
             return res.status(400).send.boom.boomify(err)
         }
     },
-    async create({body}, res) { // title: Contrlo
+    async create({body}, res) {
         try {
             const item = new model(body)
             const newItem = await item.save()
@@ -27,7 +27,7 @@ const genericCrud = (model) => ({
             return res.status(400).send.boom.boomify(err)
         }
     },
-    async update({params: {id}, body}, res) { // title: Control
+    async update({params: {id}, body}, res) {
         try {
             const item = await model.findByIdAndUpdate(id, body, {new: true})
             return res.status(200).send(item)
