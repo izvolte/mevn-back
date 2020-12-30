@@ -28,7 +28,7 @@ const createUserConfirmationOrderEmail = async ({_id, email}) => {
     return mail
 
 }
-const createAdminConfirmationOrderEmail = async ({_id, phone, fullname, phone, address}, email = 'mksepor@gmail.ru') => {
+const createAdminConfirmationOrderEmail = async ({_id, phone, fullname, address}, email = 'mksepor@gmail.ru') => {
 
     const mail = await transporter.sendMail({
         from: `Choose delivery: webmaster2@choosedesign.ru`, // sender address
