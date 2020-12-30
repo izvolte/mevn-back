@@ -37,6 +37,7 @@ const createPaymentIntent = async ({body: {fullname, address, phone, email, prod
 const stripeWebHook = async ({body}, res) =>{
     try {
         console.log(body)
+        return res.status(200).send('success')
     }catch (e) {
         res.status(500).send(e)
     }
@@ -44,5 +45,6 @@ const stripeWebHook = async ({body}, res) =>{
 
 
 module.exports = {
-    createPaymentIntent
+    createPaymentIntent,
+    stripeWebHook
 }
