@@ -1,5 +1,6 @@
 const dollarsToCents = require('dollars-to-cents')
 const { Order } = require('../model')
+const { createUserConfirmationOrderEmail, createAdminConfirmationOrderEmail } = require('./mail.controller')
 const { sum } = require('ramda')
 const stripe = require('stripe')('sk_test_51I3Ij7IwOPLtMEtjsv06bMigAy8CPar14GFfQelxflm1QX5xKLCE1uT6EM3kc50vJRfwtLOEXVlGc1z3pBkDC3XZ00o7dBdRGb');
 
@@ -46,6 +47,9 @@ const stripeWebHook = async ({body: {data}}, res) =>{
         }
 
         await Order.findByIdAndUpdate(orderId, {status: 'Paid'})
+
+        createAdminConfirmationOrderEmail(order)
+        createUserConfirmationOrderEmail(order)
 
         return res.status(200).send('success')
     }catch (e) {

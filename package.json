@@ -17,6 +17,7 @@
     "express-promise-router": "^4.0.1",
     "form-data": "^3.0.0",
     "mongoose": "^5.11.8",
+    "nodemailer": "^6.4.17",
     "qs": "^6.9.4",
     "ramda": "^0.27.1",
     "stripe": "^8.129.0"
