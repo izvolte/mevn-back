@@ -17,7 +17,7 @@ const createPaymentIntent = async ({body: {fullname, address, phone, email, prod
         }
 
         const newOrder = await new Order( prepareOrder )
-        const saveOrder = newOrder.save()
+        const saveOrder = await newOrder.save()
 
         const paymentIntent = await stripe.paymentIntents.create({
             amount: dollarsToCents(amount),
