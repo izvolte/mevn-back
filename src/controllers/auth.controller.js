@@ -1,6 +1,5 @@
 require('dotenv').config()
 const jwt = require('jsonwebtoken')
-const { omit } = require('ramda')
 const { User } = require('../model')
 
 module.exports = {
