@@ -7,11 +7,9 @@ const http = require('http');
 const cors = require('cors');
 const { routes } = require("./src/routes")
 
-
-console.log(process.env.MOGNO_URI)
 // настроим подключение к бд
 mongoose.connect(
-    process.env.MOGNO_URI,
+    process.env.MONGO_URI,
     {
         useCreateIndex: true,
         useNewUrlParser: true,
