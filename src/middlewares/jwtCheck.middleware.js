@@ -15,8 +15,6 @@ const checkJWTSign = async (req, res, next) => {
                 return next()
             }
 
-            console.log(process.env.JWT_SECRET)
-
             return next()
         })
 
