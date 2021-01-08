@@ -3,7 +3,9 @@ const {verify} = require('jsonwebtoken')
 
 
 const checkJWTSign = async (req, res, next) => {
-    const { header: { authorization } } = req
+    const { headers: { authorization } } = req
+
+
     if (authorization) {
         const token = authorization.split(' ')[1]
 
