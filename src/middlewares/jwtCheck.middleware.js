@@ -19,7 +19,7 @@ const checkJWTSign = async (req, res, next) => {
         })
     }
 
-    return res.send(403).send({
+    return res.status(403).send({
         message: 'Not Authorized'
     })
 }
