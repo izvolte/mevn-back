@@ -26,7 +26,7 @@ module.exports = {
                 })
             }
 
-            const accessToken = jwt.sing({
+            const accessToken = jwt.sign({
                 userId: foundUser._id,
                 email: foundUser.email
             }, process.env.JWT_SECRET)
@@ -47,7 +47,7 @@ module.exports = {
         try {
             const foundUser = await User.findOne({email})
             if(foundUser){
-                
+
                 return res.status(403).send({
                     message: 'Данный email занят'
                 })
