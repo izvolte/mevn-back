@@ -34,7 +34,7 @@ module.exports = {
 
             return res.status(200).send({
                 accessToken,
-                ...omit(['password'], foundUser)
+                email: foundUser.email
             })
         } catch (e) {
             return res.status(403).send({
