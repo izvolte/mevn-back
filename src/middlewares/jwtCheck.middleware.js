@@ -12,6 +12,7 @@ const checkJWTSign = async (req, res, next) => {
         verify(token, process.env.JWT_SECRET, (err) => {
             if (err) {
                 res.sendStatus(403)
+
                 return next()
             }
             return next()
