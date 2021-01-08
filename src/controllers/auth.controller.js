@@ -43,9 +43,8 @@ module.exports = {
             })
         }
     },
-    async singUp({ body: {email, password}}, res){
+    async signUp({ body: {email, password}}, res){
         try {
-
             const foundUser = await User.findOne({email})
             if(foundUser){
                 return res.status(403).send({
