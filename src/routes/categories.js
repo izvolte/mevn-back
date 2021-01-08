@@ -1,5 +1,5 @@
 const router = require("express-promise-router")()
-const checkJWTSign = require('../middlewares/jwtCheck.middleware')
+const {checkJWTSign} = require('../middlewares/jwtCheck.middleware')
 
 const { category } = require("../controllers")
 
