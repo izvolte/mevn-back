@@ -13,6 +13,7 @@ const checkJWTSign = async (req, res, next) => {
             if (err) {
                 res.sendStatus(402)
                 return next()
+
             }
 
             return next()
