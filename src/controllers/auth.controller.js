@@ -38,7 +38,7 @@ module.exports = {
             })
         } catch (e) {
             return res.status(403).send({
-                message: 'Извините, логин или пароль не подходят!',
+                message: 'Извините, логин или пароль не подходят123!',
                 e
             })
         }
