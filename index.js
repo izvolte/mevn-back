@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -9,7 +11,7 @@ const { routes } = require("./src/routes")
 
 // настроим подключение к бд
 mongoose.connect(
-    'mongodb://83.220.168.245:32768/mevnshop',
+    process.env.MOGNO_URI,
     {
         useCreateIndex: true,
         useNewUrlParser: true,
