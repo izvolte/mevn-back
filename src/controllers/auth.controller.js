@@ -10,7 +10,7 @@ module.exports = {
 
             if(!foundUser){
                 return res.status(403).send({
-                    message: 'Извините, логин или пароль не подходят567!'
+                    message: 'Извините, логин или пароль не подходят!'
                 })
             }
 
@@ -22,7 +22,7 @@ module.exports = {
 
             if(!isPasswordCurrent){
                 return res.status(403).send({
-                    message: 'Извините, логин или пароль не подходят890!'
+                    message: 'Извините, логин или пароль не подходят!'
                 })
             }
 
@@ -38,7 +38,7 @@ module.exports = {
             })
         } catch (e) {
             return res.status(403).send({
-                message: 'Извините, логин или пароль не подходят123!',
+                message: 'Извините, логин или пароль не подходят!',
                 e
             })
         }
@@ -47,7 +47,6 @@ module.exports = {
         try {
             const foundUser = await User.findOne({email})
             if(foundUser){
-
                 return res.status(403).send({
                     message: 'Данный email занят'
                 })
