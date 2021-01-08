@@ -10,19 +10,19 @@ module.exports = {
 
             if(!foundUser){
                 return res.status(403).send({
-                    message: 'Извините, логин или пароль не подходят!'
+                    message: 'Извините, логин или пароль не подходят567!'
                 })
             }
 
             // мы расшифровываем пароль из базы данных
             // сравниваем
             // TO_DO
-            const isPasswordCorrent = foundUser.password === password
+            const isPasswordCurrent = foundUser.password === password
 
 
-            if(!isPasswordCorrent){
+            if(!isPasswordCurrent){
                 return res.status(403).send({
-                    message: 'Извините, логин или пароль не подходят!'
+                    message: 'Извините, логин или пароль не подходят890!'
                 })
             }
 
