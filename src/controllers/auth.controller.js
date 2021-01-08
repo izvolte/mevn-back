@@ -47,6 +47,7 @@ module.exports = {
         try {
             const foundUser = await User.findOne({email})
             if(foundUser){
+                
                 return res.status(403).send({
                     message: 'Данный email занят'
                 })
