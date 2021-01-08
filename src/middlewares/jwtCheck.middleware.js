@@ -11,19 +11,14 @@ const checkJWTSign = async (req, res, next) => {
 
         verify(token, process.env.JWT_SECRET, (err) => {
             if (err) {
-                return res.send(403).send({
-                    message: 'Not Authorized'
-                })
+                return res.sendStatus(403)
             }
-
-            next()
+            return next()
         })
 
     }
 
-    return res.status(403).send({
-        message: 'Not Authorized'
-    })
+    return res.sendStatus(403)
 }
 
 
