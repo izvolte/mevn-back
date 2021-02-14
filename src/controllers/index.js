@@ -4,4 +4,5 @@ module.exports = {
     product: require('./product.controller'),
     payment: require('./payment.controller'),
     auth: require('./auth.controller'),
+    order: require('./order.controller'),
 }
