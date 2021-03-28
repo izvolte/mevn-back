@@ -1,5 +1,1 @@
-# mevn-back
-
-
-
-Project based JavaScript, used REST API
+# Мой тестовый проект, сделанн на nodeJs express, с использованием REST API
